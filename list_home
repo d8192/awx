@@ -1,0 +1,12 @@
+---
+- name: List files on remote host
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: Run ls command
+      ansible.builtin.shell: ls -la /home/{{ ansible_user }}
+      register: file_list
+
+    - name: Show the file list
+      ansible.builtin.debug:
+        msg: "{{ file_list.stdout_lines }}"
