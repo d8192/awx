@@ -1,6 +1,6 @@
 ---
 - name: Execute Host Python Script via AWX
-  hosts: all
+  hosts: Internal
   become: false  # Change to true if your script requires root/sudo privileges
   tasks:
     - name: Run the Python script on the host
