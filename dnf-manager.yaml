@@ -1,0 +1,8 @@
+---
+- name: Execute Host Python Script via AWX
+  hosts: all
+  become: false  # Change to true if your script requires root/sudo privileges
+  tasks:
+    - name: Run the Python script on the host
+      ansible.builtin.command:
+        cmd: "/usr/bin/python3 /home/{{ ansible_user }}/management/DNF/dnf-manager.py"
